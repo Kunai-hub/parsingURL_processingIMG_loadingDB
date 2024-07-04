@@ -38,7 +38,8 @@ for images in images_set:
     )
 
     if len(faces):
-        print(images)
+        # print(images)
         for (x, y, w, h) in faces:
             draw_mustache(img, x, y, w, h)
-        view_image(img, images)
+        # view_image(img, images)
+        cv2.imwrite(images.replace('all_images', 'results'), img)
