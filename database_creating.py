@@ -2,6 +2,7 @@
 
 import peewee
 
+
 db = peewee.SqliteDatabase('photo_with_mustache.db')
 
 
