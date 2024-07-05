@@ -4,6 +4,16 @@ import cv2
 
 
 def draw_mustache(img, x, y, w, h):
+    """
+    Рисование "усов" на картинке, если там выявлено лицо
+
+    :param img: картинка
+    :param x: точка начала по x
+    :param y: точка начала по y
+    :param w: точка конца по x
+    :param h: точка конца по y
+    :return: None
+    """
     mw = w * 2 // 5
     mh = h // 10
     mx = x + w // 2 - mw // 2

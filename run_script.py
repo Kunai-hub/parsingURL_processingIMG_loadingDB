@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import cv2
 from draw_mustache import draw_mustache
 from view_image import view_image
+import database_creating
 
 
 html = requests.get(r'https://skillbox.ru/course/profession-python/').text
@@ -42,4 +43,11 @@ for images in images_set:
         for (x, y, w, h) in faces:
             draw_mustache(img, x, y, w, h)
         # view_image(img, images)
-        cv2.imwrite(images.replace('all_images', 'results'), img)
+        images_with_mustache = images.replace('all_images', 'results_images')
+
+        cv2.imwrite(images_with_mustache, img)
+
+        database_creating.Mustache.create_table()
+        database_creating.Mustache.create(name=images_with_mustache)
+
+print(list(database_creating.Mustache.select()))
