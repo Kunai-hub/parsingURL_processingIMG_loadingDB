@@ -5,7 +5,7 @@ import cv2
 
 def view_image(image, name_of_window):
     """
-    Вывод картинки в окно
+    Вывод картинки в окно.
 
     :param image: картинка
     :param name_of_window: имя окна
